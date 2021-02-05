@@ -5,6 +5,7 @@ exports.up = function(knex) {
         tbl.increments('mat_id')
         tbl.string('mat_name', 128).notNullable()
         tbl.float('mat_quantity',6).notNullable()
+        tbl.string('mat_measurement',6).notNullable()
     })
 };
 
