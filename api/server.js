@@ -8,7 +8,7 @@ const server = express();
 server.use(helmet());
 server.use(express.json());
 
-server.get('/api/recipe', (req, res) => {
+server.get('/api/recipes', (req, res) => {
   // get all species from the database
   db('recipes')
     .then(r => {
@@ -18,3 +18,6 @@ server.get('/api/recipe', (req, res) => {
       res.status(500).json(error);
     });
 });
+
+
+module.exports = server;

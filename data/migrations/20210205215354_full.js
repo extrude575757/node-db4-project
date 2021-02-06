@@ -44,15 +44,14 @@ exports.up = function(knex) {
         tbl.integer('dirid')
             .unsigned()
             .notNullable()
-            .references('dir_id')
-            .inTable('names')
-            .onUpdate('CASCADE')
-            .onDelete('CASCADE');
+            // .references('dir_id')
+            // .inTable('directions')
+            // .onUpdate('CASCADE')
+            // .onDelete('CASCADE');
         tbl.integer('matid')
-            .unsigned()
-            .notNullable()
-            .references('dir_mat_id')
-            .inTable('directions')
+            .unsigned().notNullable()
+            .references('mat_id')
+            .inTable('materials')
             .onUpdate('CASCADE')
             .onDelete('CASCADE');
 
@@ -63,8 +62,12 @@ exports.up = function(knex) {
 
 exports.down = function(knex) {
   return knex.schema
-    .dropTableIfExists('materials')
-    .dropTableIfExists('directions')
-    .dropTableIfExists('names')
-    .dropTableIfExists('recipe');
+
+        .dropTableIfExists('recipe')
+        .dropTableIfExists('names')
+        .dropTableIfExists('directions')
+        .dropTableIfExists('materials')
+
+  
+
 };

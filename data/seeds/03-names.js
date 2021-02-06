@@ -1,5 +1,5 @@
 
-exports.seed = function(knex) {
+exports.seed = function(knex,Promise) {
   // Deletes ALL existing entries in names
   return knex('names').del()
     .then(function () {
