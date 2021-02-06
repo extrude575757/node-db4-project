@@ -5,10 +5,10 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('names').insert([
-        {name: 'Baked Faust', dir_id: 1}, 
-        {name: 'Baked Faust', dir_id: 2}, 
-        {name: 'Cream Corn', dir_id: 3}, 
-        {name: 'Baked Corn', dir_id: 4},  
+        {name: 'Baked Faust', dirs_id: 1}, 
+        {name: 'Baked Faust', dirs_id: 2}, 
+        {name: 'Cream Corn', dirs_id: 3}, 
+        {name: 'Baked Corn', dirs_id: 4},  
       ]);
     });
 };
